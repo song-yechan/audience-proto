@@ -1,0 +1,61 @@
+@import 'tailwindcss' prefix(tw);
+
+@source "../../packages/design-system/src/**/*.tsx";
+
+@import '@airbridge/component/theme.css';
+
+@theme {
+	--font-sans:
+		'Pretendard JP Variable', 'Pretendard Variable', ui-sans-serif, system-ui,
+		sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+		'Noto Color Emoji';
+	--font-sans--font-feature-settings:
+		'kern', 'calt', 'case', 'ss01', 'ss03', 'cv13', 'tnum';
+
+	--font-sans-pnum: var(--font-sans);
+	--font-sans-pnum--font-feature-settings:
+		'kern', 'calt', 'case', 'ss01', 'ss03', 'cv13', 'pnum';
+
+	--font-mono:
+		'Jetbrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+		'Liberation Mono', 'Courier New', monospace;
+
+	--breakpoint-md: 600px;
+	--breakpoint-lg: 820px;
+}
+
+/* layout variables */
+@layer base {
+	:root {
+		--layout-min-width: 820px;
+
+		/* 콘텐츠 영역 패딩 정의 */
+		--content-padding-top: var(--tw-spacing-32);
+		--content-padding-horizontal: var(--tw-spacing-60);
+		--content-padding-bottom: var(--tw-spacing-48);
+	}
+}
+
+@layer base {
+	html,
+	body {
+		height: 100%;
+		overflow: hidden;
+		font-size: 14px;
+		scroll-behavior: smooth;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	#root {
+		height: 100%;
+	}
+
+	mark {
+		background: transparent;
+	}
+
+	svg {
+		display: initial;
+		vertical-align: initial;
+	}
+}
